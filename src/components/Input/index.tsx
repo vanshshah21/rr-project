@@ -166,19 +166,19 @@ const Input = (props: InputProps) => {
       return;
     }
 
-    if (selectedAlgo.value === 'NPP' || selectedAlgo.value === 'PP') {
-      if (priorities.trim() === '') {
-        prioritiesArr = arrivalTimeArr.map(() => 0);
-      } else if (
-        prioritiesArr.length !== arrivalTimeArr.length ||
-        prioritiesArr.length !== arrivalTimeArr.length
-      ) {
-        invalidInputSwal(
-          'Arrival times, burst times and priorities should have equal length'
-        );
-        return;
-      }
-    }
+    // if (selectedAlgo.value === 'NPP' || selectedAlgo.value === 'PP') {
+    //   if (priorities.trim() === '') {
+    //     prioritiesArr = arrivalTimeArr.map(() => 0);
+    //   } else if (
+    //     prioritiesArr.length !== arrivalTimeArr.length ||
+    //     prioritiesArr.length !== arrivalTimeArr.length
+    //   ) {
+    //     invalidInputSwal(
+    //       'Arrival times, burst times and priorities should have equal length'
+    //     );
+    //     return;
+    //   }
+    // }
 
     props.setSelectedAlgo(selectedAlgo);
     props.setArrivalTime(arrivalTimeArr);
@@ -248,7 +248,7 @@ const Input = (props: InputProps) => {
             />
           </fieldset>
         )}
-        {(selectedAlgo.value === 'NPP' || selectedAlgo.value === 'PP') && (
+        {/* {(selectedAlgo.value === 'NPP' || selectedAlgo.value === 'PP') && (
           <fieldset>
             <label htmlFor="priorities">Priorities</label>
             <input
@@ -259,7 +259,7 @@ const Input = (props: InputProps) => {
               placeholder="Lower # = higher priority"
             />
           </fieldset>
-        )}
+        )} */}
         <Button>Solve</Button>
       </Form>
     </StyledInput>

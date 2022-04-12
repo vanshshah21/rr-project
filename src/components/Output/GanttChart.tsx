@@ -25,7 +25,7 @@ const JobContainer = styled.div`
 `;
 
 const Job = styled.div`
-  width: 41px;
+  width: 40px;
   height: 35px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background-color: rgba(255, 255, 255, 0.5);
@@ -46,7 +46,7 @@ const TimeContainer = styled.div`
 `;
 
 const Time = styled.div`
-  width: 40px;
+  width: 41px;
   height: 20px;
   ${media['600']`
     width: 32px;

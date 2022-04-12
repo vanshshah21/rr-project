@@ -42,7 +42,7 @@ module.exports = {
     return config;
   },
   env: {
-    ASSET_PREFIX: isProd ? '' : '',
+    ASSET_PREFIX: '',
     BASE: isProd ? '/process-scheduling-solver' : '',
   },
   basePath: isProd ? '/process-scheduling-solver' : '',

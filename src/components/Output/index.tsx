@@ -9,10 +9,13 @@ import { media } from '../GlobalStyle.css';
 const StyledOutput = styled.div`
   padding: 1rem 2rem 2rem 2rem;
   ${media['600']`padding: 0.5rem 1.1rem 1.5rem 1.1rem;`}
-  background: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1),
     0px 2px 32px rgba(15, 91, 206, 0.1);
   border-radius: 15px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   flex: 1;
   min-width: 0;
   overflow: hidden;
@@ -42,6 +45,12 @@ const AlgoValue = styled.span`
   ${media['600']`
     font-size: 14px;
   `}
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 1px 0px 20px 0 rgb(31 38 135 / 15%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 `;
 
 const fadeIn = keyframes`
@@ -80,7 +89,6 @@ type OutputProps = {
   arrivalTime: number[];
   burstTime: number[];
   timeQuantum: number;
-  priorities: number[];
 };
 
 const Output = ({
@@ -88,7 +96,6 @@ const Output = ({
   arrivalTime,
   burstTime,
   timeQuantum,
-  priorities,
 }: OutputProps) => {
   if (!arrivalTime.length || !burstTime.length) {
     return (
@@ -104,8 +111,7 @@ const Output = ({
       selectedAlgo.value,
       arrivalTime,
       burstTime,
-      timeQuantum,
-      priorities
+      timeQuantum
     );
     return (
       <StyledOutput>

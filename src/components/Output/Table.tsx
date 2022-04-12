@@ -10,13 +10,10 @@ const TableWrapper = styled.div`
   ${media['600']`
   margin: 0px auto 0px auto;
   `}
-  background:
-    linear-gradient(to right, white 30%, rgba(255,255,255,0)),
-    linear-gradient(to right, rgba(255,255,255,0), white 70%) 0 100%,
-    radial-gradient(farthest-side at 0% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)),
-    radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+  box-shadow: 0px 0px 20px 0 rgb(31 38 135 / 15%);
+  border-radius: 10px;
   background-repeat: no-repeat;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
   background-position: 0 0, 100%, 0 0, 100%;
   background-attachment: local, local, scroll, scroll;
@@ -28,7 +25,7 @@ const StyledTable = styled.table`
   border-radius: 10px;
   box-sizing: border-box;
   ${media['1275']`font-size: 14px;`}
-
+  border-radius: 5px;
   tr {
     height: 40px;
     line-height: 0;
@@ -41,7 +38,7 @@ const StyledTable = styled.table`
     padding: 15px;
     ${media['1275']`padding: 12px`};
     ${media['600']`padding: 8px`};
-    border: 1px solid #e1e1e1;
+    border: 0.5px solid #e1e1e1;
     line-height: 16.1px;
   }
 `;
@@ -88,7 +85,7 @@ const Table = ({ solvedProcessesInfo }: TableProps) => {
   const averageWAT = totalWAT / numberOfProcesses;
 
   return (
-    <TableWrapper>    
+    <TableWrapper>
       <StyledTable>
         <thead>
           <tr>
@@ -117,10 +114,12 @@ const Table = ({ solvedProcessesInfo }: TableProps) => {
                 Average
               </td>
               <td>
-                {totalTAT} / {numberOfProcesses} = {precisionRound(averageTAT, 3)}
+                {totalTAT} / {numberOfProcesses} ={' '}
+                {precisionRound(averageTAT, 3)}
               </td>
               <td>
-                {totalWAT} / {numberOfProcesses} = {precisionRound(averageWAT, 3)}
+                {totalWAT} / {numberOfProcesses} ={' '}
+                {precisionRound(averageWAT, 3)}
               </td>
             </tr>
           }

@@ -2,7 +2,10 @@ const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   experimental: {
-    styledComponents: true
+    styledComponents: true,
+  },
+  images: {
+    disableStaticImages: true,
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.module.rules.push(
@@ -38,11 +41,8 @@ module.exports = {
 
     return config;
   },
-  // assetPrefix: isProd ? 'https://boonsuen.com/process-scheduling-solver' : '',
   env: {
-    ASSET_PREFIX: isProd
-      ? 'https://boonsuen.com/process-scheduling-solver'
-      : '',
+    ASSET_PREFIX: isProd ? '' : '',
     BASE: isProd ? '/process-scheduling-solver' : '',
   },
   basePath: isProd ? '/process-scheduling-solver' : '',

@@ -61,17 +61,16 @@ export default function Home() {
   const [arrivalTime, setArrivalTime] = useState<number[]>([]);
   const [burstTime, setBurstTime] = useState<number[]>([]);
   const [timeQuantum, setTimeQuantum] = useState<number>();
-  const [priorities, setPriorities] = useState<number[]>([]);
 
   return (
     <div>
       <Head>
-        <title>RR Project</title>
+        <title>Round Robin Project</title>
         <meta
           name="description"
           content="Dynamically generates gantt chart and calculates TAT (turnaround time) and WAT (waiting time) based on various CPU scheduling algorithms."
         />
-        <meta property="og:title" content="RR Project" />
+        <meta property="og:title" content="RR ProjectRound Robin Project" />
         <meta
           property="og:description"
           content="Dynamically generates gantt chart and calculates TAT (turnaround time) and WAT (waiting time) based on various CPU scheduling algorithms."
@@ -85,14 +84,12 @@ export default function Home() {
           setArrivalTime={setArrivalTime}
           setBurstTime={setBurstTime}
           setTimeQuantum={setTimeQuantum}
-          setPriorities={setPriorities}
         />
         <Output
           selectedAlgo={selectedAlgo}
           arrivalTime={arrivalTime}
           burstTime={burstTime}
           timeQuantum={timeQuantum}
-          priorities={priorities}
         />
       </Main>
     </div>

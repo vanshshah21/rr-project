@@ -20,8 +20,7 @@ export const solve = (
   algo: AlgoType,
   arrivalTime: number[],
   burstTime: number[],
-  timeQuantum: number,
-  priorities: number[]
+  timeQuantum: number
 ) => {
   return rr(arrivalTime, burstTime, timeQuantum);
 };

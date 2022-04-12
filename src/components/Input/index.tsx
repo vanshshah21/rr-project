@@ -16,8 +16,8 @@ const StyledInput = styled.div`
   padding: 1rem 2rem 2rem 2rem;
   ${media['600']`padding: 0.5rem 1.1rem 1.5rem 1.1rem;`}
   background: #ffffff;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1),
-    0px 2px 32px rgba(15, 91, 206, 0.1);
+  box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 10%),
+    0px 2px 32px rgb(15 91 206 / 10%);
   border-radius: 15px;
   align-self: flex-start;
   ${media['1050']`align-self: normal;max-width: 100%;width: 100%;`}
@@ -70,7 +70,7 @@ const Form = styled.form`
   }
 
   button {
-    background-color: #2684ff;
+    background-color: #9757d7;
     border-radius: 5px;
     color: #fff;
     width: 5.625rem;
@@ -81,7 +81,7 @@ const Form = styled.form`
     overflow: hidden;
 
     &:hover {
-      background-color: #005bff;
+      background-color: #b171f1;
     }
   }
 
@@ -107,7 +107,6 @@ type InputProps = {
   setArrivalTime: Dispatch<SetStateAction<number[]>>;
   setBurstTime: Dispatch<SetStateAction<number[]>>;
   setTimeQuantum: Dispatch<SetStateAction<number>>;
-  setPriorities: Dispatch<SetStateAction<number[]>>;
 };
 
 const Input = (props: InputProps) => {
@@ -170,7 +169,6 @@ const Input = (props: InputProps) => {
     props.setArrivalTime(arrivalTimeArr);
     props.setBurstTime(burstTimeArr);
     props.setTimeQuantum(timeQuantumInt);
-    props.setPriorities(prioritiesArr);
   };
 
   const handleArrivalTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -185,21 +183,10 @@ const Input = (props: InputProps) => {
     setTimeQuantum(e.target.value);
   };
 
-  const handlePrioritiesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPriorities(e.target.value);
-  };
-
   return (
     <StyledInput>
       <h1>Input</h1>
       <Form onSubmit={handleSubmit}>
-        <fieldset>
-          <label htmlFor="react-select-algo">Algorithm</label>
-          <AlgoSelect
-            selectedAlgo={selectedAlgo}
-            setSelectedAlgo={setSelectedAlgo}
-          />
-        </fieldset>
         <fieldset>
           <label htmlFor="arrival-time">Arrival Times</label>
           <input

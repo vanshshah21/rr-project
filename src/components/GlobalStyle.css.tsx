@@ -1,6 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 import InterVarWoff2 from '../assets/fonts/Inter.var.woff2';
+import bg from '../assets/img/32.png';
 
 export const fontFaceRules = `
   @font-face {
@@ -28,6 +29,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, sans-serif;
     font-size: 1rem;
     -webkit-font-smoothing: antialiased;
+  }
+
+  html{
+    background-image: url("${bg}");
+  }
+
+  body{
+    background: transparent;
   }
 
   input, button {
@@ -108,12 +117,12 @@ const sizes = {
   '1275': 1275,
   '1150': 1150,
   '1050': 1050,
-  '600': 600
+  '600': 600,
 };
 
 export const media = Object.keys(sizes).reduce((acc, label) => {
   acc[label] = (...args: any[]) => css`
-    @media (max-width: ${sizes[label] / 16}em) {      
+    @media (max-width: ${sizes[label] / 16}em) {
       ${css.call(undefined, ...args)}
     }
   `;

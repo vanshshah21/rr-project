@@ -25,19 +25,19 @@ const JobContainer = styled.div`
 `;
 
 const Job = styled.div`
-  width: 40px;
+  width: 41px;
   height: 35px;
-  border: 1px solid #8da6ff;
-  background-color: #edf4ff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: rgba(255, 255, 255, 0.5);
   color: #424242;
   ${media['600']`
     width: 32px;
     height: 27px;
     font-size: 14px;
   `}
-
+  border-radius: 5px;
   &:not(:last-child) {
-    margin-right: -1px;
+    margin-right: 0px;
   }
 `;
 
@@ -53,9 +53,9 @@ const Time = styled.div`
     height: 21px;
     font-size: 14px;
   `}
-  border: 1px solid #fff;
+  // border: 1px solid #fff;
   color: #444e5c;
-
+  border-radius: 5px;
   &:not(:last-child) {
     margin-right: -1px;
   }
@@ -130,7 +130,7 @@ const GanttChart = ({ ganttChartInfo }: GanttChartProps) => {
       break;
     }
   }
-  
+
   // If index of last time item equal to acc
   let lastLineItemCount: number;
   if (time.length - 1 === acc) {
